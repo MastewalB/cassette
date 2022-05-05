@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      onGenerateTitle: (context){
+        return AppLocalizations.of(context)?.helloWorld ?? "HEllo";
+        },
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: [
+        // 'en' is the language code. We could optionally provide a
+        // a country code as the second param, e.g.
+        // Locale('en', 'US'). If we do that, we may want to
+        // provide an additional app_en_US.arb file for
+        // region-specific translations.
+        const Locale('en', ''),
+        const Locale('es', ''),
+      ],
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +38,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: AppLocalizations.of(context)?.helloWorld ?? "HEllo"),
     );
   }
 }
