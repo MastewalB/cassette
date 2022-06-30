@@ -1,6 +1,7 @@
-import 'package:cassette/src/features/download/presentation/download_page.dart';
 import 'package:flutter/material.dart';
-import 'package:cassette/src/common_widgets/common_widgets.dart';
+import 'package:cassette/src/features/download/downloads.dart';
+import 'package:cassette/src/features/history/history.dart';
+import 'package:cassette/src/features/subscriptions/subscriptions.dart';
 
 class LibraryPage extends StatefulWidget {
   const LibraryPage({Key? key}) : super(key: key);
@@ -38,18 +39,19 @@ class _LibraryPageState extends State<LibraryPage> {
                   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                   forceElevated: innerBoxIsScrolled,
                   automaticallyImplyLeading: false,
-                  expandedHeight: 15.0,
+                  expandedHeight: 5.0,
                   flexibleSpace: FlexibleSpaceBar(),
                   bottom: TabBar(
                     indicatorColor: Theme.of(context).indicatorColor,
                     indicatorWeight: 04,
-                    // indicatorSize: ,
                     tabs: const [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "Downloads",
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
                         ),
                       ),
                       Padding(
@@ -79,9 +81,8 @@ class _LibraryPageState extends State<LibraryPage> {
           body: TabBarView(
             children: [
               DownloadPage(),
-              // Text("Downloads"),
-              Text("History"),
-              Text("Subscriptions"),
+              HistoryPage(),
+              SubscriptionsPage(),
             ],
           ),
         ),
@@ -89,27 +90,3 @@ class _LibraryPageState extends State<LibraryPage> {
     );
   }
 }
-//
-// SliverAppBar(
-// backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-// title: Text(
-// 'Your Library',
-// style: Theme.of(context).textTheme.displayLarge,
-// ),
-// centerTitle: false,
-// floating: true,
-// actions: [
-// CircleButton(
-// icon: Icons.search,
-// iconSize: 27.0,
-// onPressed: () => {},
-// )
-// ],
-// bottom: const TabBar(
-// tabs: [
-// Tab(text: "Downloads"),
-// Tab(text: "History"),
-// Tab(text: "Subscriptions"),
-// ],
-// ),
-// ),
