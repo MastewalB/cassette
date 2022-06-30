@@ -1,4 +1,5 @@
 import 'package:cassette/src/common_widgets/common_widgets.dart';
+import 'package:cassette/src/features/home/home.dart';
 import 'package:cassette/src/features/home/presentation/widgets/category_widget/category_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cassette/src/data/data.dart';
@@ -48,8 +49,9 @@ class _HomePageState extends State<HomePage> {
                 fillColor: Color.fromARGB(255, 47, 49, 66),
                 // contentPadding: EdgeInsets.all(8),
                 enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide.none,),
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide.none,
+                ),
               ),
             ),
             SizedBox(
@@ -66,7 +68,17 @@ class _HomePageState extends State<HomePage> {
                       mainAxisSpacing: 10.0,
                       crossAxisSpacing: 10.0),
                   itemBuilder: (context, index) {
-                    return PodCard(podcast: podcasts[index]);
+                    return InkWell(
+                      splashColor: Colors.white,
+                      onTap: (){
+                        print(index);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PodcastDetailPage(podcast: podcasts[index])),
+                        );
+                      },
+                      child: PodCard(podcast: podcasts[index]),
+                    );
                   }),
             ),
           ],
