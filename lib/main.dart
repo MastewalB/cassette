@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cassette/src/themes/custom_theme.dart';
 import 'package:cassette/src/navigation_page.dart';
-import 'package:cassette/src/features/player/player.dart';
 import 'package:cassette/src/features/authentication/authentication.dart';
 import 'package:cassette/src/features/onboarding/onboarding_page.dart';
 import 'package:cassette/src/features/home/home.dart';

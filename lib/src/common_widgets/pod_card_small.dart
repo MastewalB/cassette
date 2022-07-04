@@ -14,53 +14,51 @@ class PodCardSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        print("object");
-      },
-      child: Container(
-        // padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 31, 29, 43),
-        ),
+    return Container(
+      // padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 31, 29, 43),
+      ),
 
-        height: 50,
-        alignment: Alignment.center,
-        child: Row(
-          children: [
-            Container(
-              width: 50,
-              height: 50,
-              child: ClipRRect(
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                ),
+      height: 50,
+      alignment: Alignment.center,
+      child: Row(
+        children: [
+          Container(
+            width: 50,
+            height: 50,
+            child: ClipRRect(
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(color: Colors.white, fontSize: 19),
-                    maxLines: 2,
-                  ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 19,
+                      overflow: TextOverflow.ellipsis),
+                  maxLines: 2,
                 ),
-                Flexible(
-                  child: Text(
-                    duration,
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
+              ),
+              Flexible(
+                child: Text(
+                  duration,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                ),
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
