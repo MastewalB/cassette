@@ -18,10 +18,10 @@ class _DownloadPageState extends State<DownloadPage> {
         shrinkWrap: true,
         itemBuilder: (BuildContext, index) {
           return ContainerBody(
-            title: episodes[index]["title"] ?? " ",
-            date: episodes[index]["date"] ?? " ",
-            time: episodes[index]["time"] ?? " ",
-            size: episodes[index]["size"] ?? " ",
+            title: episodes[index].title,
+            date: episodes[index].date,
+            time: episodes[index].time,
+            size: episodes[index].size,
             icon: Icons.delete,
           );
         },

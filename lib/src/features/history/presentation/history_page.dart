@@ -18,10 +18,10 @@ class _HistoryPageState extends State<HistoryPage> {
         shrinkWrap: true,
         itemBuilder: (BuildContext context, index) {
           return ContainerBody(
-            title: episodes[index]["title"] ?? " ",
-            date: episodes[index]["date"] ?? " ",
-            time: episodes[index]["time"] ?? " ",
-            size: episodes[index]["size"] ?? " ",
+            title: episodes[index].title,
+            date: episodes[index].date,
+            time: episodes[index].time,
+            size: episodes[index].size,
             icon: Icons.download,
           );
         },
