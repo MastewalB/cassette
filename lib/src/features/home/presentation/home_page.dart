@@ -1,4 +1,4 @@
-import 'package:cassette/src/common_widgets/common_widgets.dart';
+import 'package:cassette/src/core/common_widgets/common_widgets.dart';
 import 'package:cassette/src/features/home/home.dart';
 import 'package:cassette/src/features/home/presentation/widgets/category_widget/category_widget.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           Icons.toc_sharp,
           size: 35,
         ),
-        title: Text("Podkest"),
+        title: Text("Cassette"),
         actions: [
           Icon(
             Icons.settings,
@@ -30,12 +30,11 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 20.0,
+          vertical: 5.0,
           horizontal: 10.0,
         ),
         child: Column(
           children: [
-            CategoriesWidget(),
             TextField(
               decoration: InputDecoration(
                 hintText: "Search...",
@@ -47,9 +46,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 filled: true,
                 fillColor: Color.fromARGB(255, 47, 49, 66),
-                // contentPadding: EdgeInsets.all(8),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide.none,
                 ),
               ),
@@ -57,6 +55,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 10.0,
             ),
+            CategoriesWidget(),
             Expanded(
               child: GridView.builder(
                   shrinkWrap: true,
@@ -70,11 +69,13 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, index) {
                     return InkWell(
                       splashColor: Colors.white,
-                      onTap: (){
+                      onTap: () {
                         print(index);
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => PodcastDetailPage(podcast: podcasts[index])),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  PodcastDetailPage(podcast: podcasts[index])),
                         );
                       },
                       child: PodCard(podcast: podcasts[index]),

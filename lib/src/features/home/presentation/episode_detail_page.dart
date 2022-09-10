@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cassette/src/models/podcast.dart';
 import 'package:cassette/src/models/episode.dart';
 import 'package:flutter/services.dart';
-import 'package:readmore/readmore.dart';
 import 'package:cassette/src/features/player/player.dart';
+import 'package:cassette/src/core/common_widgets/common_widgets.dart';
 
 class EpisodeDetailPage extends StatelessWidget {
   final Podcast podcast;
@@ -124,11 +124,10 @@ class EpisodeDetailPage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(25, 0, 20, 0),
-            child: ReadMoreText(
-              podcast.description,
+            child: ReadMore(
+              data: podcast.description,
               style: TextStyle(color: Colors.white, fontSize: 17),
               trimLines: 10,
-              trimMode: TrimMode.Line,
               trimCollapsedText: 'Show more',
               trimExpandedText: 'Show less',
               // moreStyle:

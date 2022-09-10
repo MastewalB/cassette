@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cassette/src/common_widgets/common_widgets.dart';
+import 'package:cassette/src/core/common_widgets/common_widgets.dart';
 import 'package:cassette/src/data/data.dart';
 
 class SubscriptionsPage extends StatefulWidget {

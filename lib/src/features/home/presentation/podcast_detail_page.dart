@@ -1,10 +1,8 @@
 import 'package:cassette/src/features/home/presentation/episode_detail_page.dart';
-import 'package:cassette/src/models/episode.dart';
 import 'package:cassette/src/models/podcast.dart';
 import 'package:flutter/material.dart';
-import 'package:cassette/src/common_widgets/common_widgets.dart';
-import 'package:cassette/src/data/data.dart';
-import 'package:readmore/readmore.dart';
+import 'package:cassette/src/core/common_widgets/common_widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PodcastDetailPage extends StatelessWidget {
   final Podcast podcast;
@@ -53,7 +51,8 @@ class PodcastDetailPage extends StatelessWidget {
                 podcast.title,
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
+                    fontSize: 28,
+                    fontFamily: "Poppins",
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -65,7 +64,7 @@ class PodcastDetailPage extends StatelessWidget {
                 podcast.author,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
+                  fontSize: 18,
                   // fontWeight: FontWeight.bold,
                 ),
               ),
@@ -79,11 +78,10 @@ class PodcastDetailPage extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(25.0, 0.0, 15.0, 10.0),
-              child: ReadMoreText(
-                podcast.description,
-                style: TextStyle(color: Colors.white, fontSize: 16),
+              child: ReadMore(
+                data: podcast.description,
+                style: TextStyle(color: Colors.white, fontSize: 14,),
                 trimLines: 4,
-                trimMode: TrimMode.Line,
                 trimCollapsedText: 'Show more',
                 trimExpandedText: 'Show less',
                 // moreStyle:
@@ -103,7 +101,7 @@ class PodcastDetailPage extends StatelessWidget {
                           (index + 1).toString(),
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 15,
                           ),
                         ),
                         SizedBox(

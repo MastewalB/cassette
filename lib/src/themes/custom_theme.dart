@@ -30,7 +30,7 @@ class CustomTheme {
             fontSize: 28,
             fontWeight: FontWeight.w400,
           )),
-      fontFamily: 'Montserrat',
+      fontFamily: 'Poppins',
       buttonTheme: ButtonThemeData(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
@@ -50,7 +50,7 @@ class CustomTheme {
         ),
 
         selectedLabelStyle: TextStyle(
-          fontFamily: 'Montserrat',
+          fontFamily: 'Poppins',
           fontSize: 15,
         ),
         unselectedLabelStyle: TextStyle(

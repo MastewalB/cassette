@@ -46,30 +46,24 @@ class _LibraryPageState extends State<LibraryPage> {
                     indicatorWeight: 04,
                     tabs: const [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           "Downloads",
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "History",
-                          style: TextStyle(
-                            fontSize: 18,
-                          ),
+                      Text(
+                        "History",
+                        style: TextStyle(
+                          fontSize: 16,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Subscriptions",
-                          style: TextStyle(
-                            fontSize: 18,
-                          ),
+                      Text(
+                        "Subscriptions",
+                        style: TextStyle(
+                          fontSize: 16,
                         ),
                       ),
                     ],
