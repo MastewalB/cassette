@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'colors/colors.dart';
 
 class CustomTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       primaryColor: Colors.purple.shade400,
-      scaffoldBackgroundColor: Color.fromARGB(255, 31, 29, 43),
+      scaffoldBackgroundColor: const Color.fromARGB(255, 31, 29, 43),
       canvasColor: Colors.purple.shade200,
       indicatorColor: Colors.purple.shade50,
       primaryIconTheme: const IconThemeData(
@@ -36,7 +35,7 @@ class CustomTheme {
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
         buttonColor: const Color.fromARGB(200, 93, 84, 143),
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
         backgroundColor: Color.fromARGB(255, 47, 49, 66),
         selectedItemColor: Colors.white,

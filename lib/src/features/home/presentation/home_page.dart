@@ -1,5 +1,7 @@
 import 'package:cassette/src/core/common_widgets/common_widgets.dart';
+import 'package:cassette/src/core/constants/constants.dart';
 import 'package:cassette/src/features/home/home.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:cassette/src/features/home/presentation/widgets/category_widget/category_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cassette/src/data/data.dart';
@@ -16,14 +18,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.toc_sharp,
+        leading: const Icon(
+          Constants.drawerIcon,
           size: 35,
         ),
-        title: Text("Cassette"),
-        actions: [
+        title: Text(AppLocalizations.of(context)!.cassette),
+        actions: const [
           Icon(
-            Icons.settings,
+            Constants.settingsIcon,
             size: 28,
           )
         ],
@@ -37,30 +39,29 @@ class _HomePageState extends State<HomePage> {
           children: [
             TextField(
               decoration: InputDecoration(
-                hintText: "Search...",
+                hintText: "${AppLocalizations.of(context)!.search}...",
                 hintStyle: TextStyle(color: Colors.grey.shade300),
                 prefixIcon: Icon(
-                  Icons.search,
+                  Constants.searchIcon,
                   color: Colors.grey.shade400,
                   size: 20,
                 ),
                 filled: true,
-                fillColor: Color.fromARGB(255, 47, 49, 66),
+                fillColor: const Color.fromARGB(255, 47, 49, 66),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide.none,
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
-            CategoriesWidget(),
+            const CategoriesWidget(),
             Expanded(
               child: GridView.builder(
                   shrinkWrap: true,
                   itemCount: podcasts.length,
-                  // padding: EdgeInsets.symmetric(horizontal: 16),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 0.9,
@@ -70,7 +71,6 @@ class _HomePageState extends State<HomePage> {
                     return InkWell(
                       splashColor: Colors.white,
                       onTap: () {
-                        print(index);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
